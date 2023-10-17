@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,12 +28,22 @@ public class MainActivity extends AppCompatActivity {
         mostrarResultado();
     }
     public void resetearContador(View vista){
-        contador = 0;
+
+        EditText valor = (EditText) findViewById(R.id.editTextNumber);
+
+        try {
+            int numero = Integer.parseInt(valor.getText().toString());
+            contador = numero;
+        }catch (NumberFormatException e){
+            contador = 0;
+        }
+
+
         mostrarResultado();
     }
 
     private void mostrarResultado() {
-        TextView textoResultado = findViewById(R.id.ContadorTexto);
+        TextView textoResultado = findViewById(R.id.contadorTexto);
         textoResultado.setText("" + contador);
     }
 }

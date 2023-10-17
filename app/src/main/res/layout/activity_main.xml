@@ -6,73 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="43dp"
+        android:fontFamily="sans-serif"
+        android:freezesText="false"
+        android:text="Contador"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/contadorTexto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/TituloTexto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:text="Contador:"
-            android:textSize="34dp" />
+    <TextView
+        android:id="@+id/contadorTexto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/ContadorTexto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="34dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="100dp"
+        android:onClick="incrementarContador"
+        android:text="+"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contadorTexto" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="60dp"
+        android:onClick="decrementarContador"
+        android:text="-"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contadorTexto" />
 
-        <Button
-            android:onClick="incrementarContador"
-            android:id="@+id/btnIncrementar"
-            android:layout_width="20dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:text="+"
-            android:textSize="30dp" />
-        
-        <Space
-            android:layout_width="25dp"
-            android:layout_height="0dp"></Space>
-"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="359dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="168dp"
+        android:onClick="resetearContador"
+        android:text="Resetear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-        <Button
-            android:onClick="decrementarContador"
-            android:id="@+id/btnDecrementar"
-            android:layout_width="20dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:text="-"
-            android:textSize="30dp" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnResetear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="bottom|center"
-            android:onClick="resetearContador"
-
-            android:text="Resetear"
-            android:textSize="24sp" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
