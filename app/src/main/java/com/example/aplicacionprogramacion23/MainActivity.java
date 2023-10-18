@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,13 +20,29 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void incrementarContador(View vista){
+
          contador++;
          mostrarResultado();
     }
 
     public void decrementarContador(View vista){
-        contador--;
+
+       CheckBox negativo = (CheckBox) findViewById(R.id.CheckBoxNegativo);
+
+
+        if(negativo.isChecked()){
+            if(contador<=0){
+                contador = 0;
+            }else{
+                contador--;
+            }
+        }else{
+            contador--;
+        }
+
         mostrarResultado();
+
+
     }
     public void resetearContador(View vista){
 
